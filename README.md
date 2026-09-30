@@ -2,12 +2,77 @@
 
 ## Statement
 
-- You’re building a portfolio management module, part of a personal investments and trading app
-- Construct a simple Portfolio class that has a collection of Stocks. Assume each Stock has a “Current Price” method that receives the last available price. Also, the Portfolio class has a collection of “allocated” Stocks that represents the distribution of the Stocks the Portfolio is aiming (i.e. 40% META, 60% APPL)
-- Provide a portfolio rebalance method to know which Stocks should be sold and which ones should be bought to have a balanced Portfolio based on the portfolio’s allocation
-- Add documentation/comments to understand your thinking process and solution
-- Important: If you use LLMs that’s ok, but you must share the conversations
+Build a portfolio management module that:
 
-## Solution
+- Maintains a collection of stocks.
+- Stores a target allocation for each stock.
+- Calculates portfolio rebalance recommendations.
+- Indicates which stocks should be bought or sold to achieve the target allocation.
 
-### Stock class
+## Classes
+
+### Stock
+
+Represents a stock position.
+
+Attributes:
+
+- `symbol`
+- `price`
+- `quantity`
+- `target_allocation`
+
+Operations:
+
+- Calculate market value
+- Update price
+- Buy shares
+- Sell shares
+
+### Portfolio
+
+Represents a collection of stocks.
+
+Operations:
+
+- Search stock by symbol
+- Calculate total portfolio value
+- Generate rebalance recommendations
+
+## Installation
+
+```bash
+poetry install
+```
+
+## Running Tests
+
+Run all tests:
+
+```bash
+poetry run pytest
+```
+
+## Example
+
+```python
+portfolio = Portfolio(
+    stocks=[
+        Stock("META", 100, 10, 0.4),
+        Stock("AAPL", 200, 5, 0.6)
+    ]
+)
+
+recommendations = portfolio.rebalance()
+```
+
+### Updating a stock price
+
+```python
+meta = portfolio.search_stock("META")
+
+if meta:
+    meta.current_price(120)
+```
+
+The portfolio value and rebalance recommendations will automatically use the updated stock price.
