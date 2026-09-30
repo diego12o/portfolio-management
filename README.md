@@ -39,6 +39,11 @@ Operations:
 - Calculate total portfolio value
 - Generate rebalance recommendations
 
+## Requirements
+ 
+- Python 3.12+
+- Poetry
+
 ## Installation
 
 ```bash
