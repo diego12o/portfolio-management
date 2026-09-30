@@ -30,6 +30,7 @@ class Stock:
         """
         if quantity >= self.quantity:
             self.quantity = 0
+            return
 
         self.quantity = self.quantity - quantity
     
