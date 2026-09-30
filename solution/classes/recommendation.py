@@ -15,5 +15,5 @@ class Recommendation:
     Represents a recommendation to buy or sell a stock.
     """
     action: Action
-    symbol: float
+    symbol: str
     amount: float
