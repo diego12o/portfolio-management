@@ -59,7 +59,7 @@ class Portfolio:
                     Recommendation(
                         Action.BUY,
                         stock.symbol,
-                        difference
+                        abs(difference)
                     )
                 )
             
@@ -69,7 +69,7 @@ class Portfolio:
                     Recommendation(
                         Action.SELL,
                         stock.symbol,
-                        difference
+                        abs(difference)
                     )
                 )
         
