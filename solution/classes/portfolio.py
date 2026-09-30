@@ -12,7 +12,7 @@ class Portfolio:
     def __post_init__(self):
         target_sum = sum(
             stock.target_allocation
-            for stock in self.stocks.values()
+            for stock in self.stocks
         )
 
         if target_sum != 1:
